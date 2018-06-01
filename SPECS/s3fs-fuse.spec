@@ -7,7 +7,6 @@ Group:          System Environment/Base
 License:        GPLv2
 URL:            https://github.com/s3fs-fuse/s3fs-fuse
 Source0:        https://github.com/s3fs-fuse/s3fs-fuse/archive/v%{version}.tar.gz
-Source1:        passwd-s3fs
 
 
 Requires:	fuse >= 2.8.4
@@ -45,13 +44,12 @@ make %{?_smp_mflags}
 
 %install
 make install DESTDIR=%{buildroot}
-cp -p %{SOURCE1} passwd-s3fs
 
 
 %files
 %{_bindir}/s3fs
 %{_mandir}/man1/s3fs.1*
-%doc AUTHORS README.md ChangeLog COPYING passwd-s3fs
+%doc AUTHORS README.md ChangeLog COPYING
 
 
 %changelog
